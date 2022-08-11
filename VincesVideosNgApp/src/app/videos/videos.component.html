@@ -1,0 +1,25 @@
+<div fxFlex fxLayout="column">
+    <mat-card *ngFor="let video of videos">
+        <mat-card-title-group>
+            <mat-card-title>{{video.title}}</mat-card-title>
+            <mat-card-subtitle>{{video.issueDate}} - {{video.age}}<br />
+                <span *ngIf="video.stockCount > 0">Available!</span>
+                <span *ngIf="video.stockCount == 0">Out of stock</span><br />
+                <span>Rental Price : {{video.rentalCostPerDay| currency:'GBP'}} per day</span><br />
+                <span>ISBN : {{video.isbn}}</span>
+            </mat-card-subtitle>
+            <img mat-card-md-image src="data:image/jpeg;base64,{{video.thumbnail}}">
+        </mat-card-title-group>
+        <mat-card-content>
+            <p>Tags :
+                <span style="background-color: #673ab7; color:white; display: inline-block; margin:5px; padding: 3px;"
+                    *ngFor="let tag of video.tags">
+                    {{tag.name}}
+                </span>
+            </p>
+            <p>Rating : {{video.feedback.rating}}/5</p>
+            <p>{{video.description}}</p>
+            <p><a href="#">Customer Reviews</a></p>
+        </mat-card-content>
+    </mat-card>
+</div>
