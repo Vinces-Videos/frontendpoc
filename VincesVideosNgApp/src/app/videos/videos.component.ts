@@ -12,6 +12,7 @@ export class VideosComponent implements OnInit {
   constructor(private videoService:VideoService) { }
 
   ngOnInit(): void {
+    console.log('Accessing video service.');
     this.videoService.getVideos().subscribe(videos => this.videos = videos);
   }
 
