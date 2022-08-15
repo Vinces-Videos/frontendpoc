@@ -12,7 +12,7 @@ import videoData from './data/videos.json';
 
 export class VideoService {
 
-  private videoApiUrl = 'https://localhost:7080/videos';
+  private videoApiUrl = 'http://localhost:7080/api/videos';
 
   httpOptions = {
     headers: new HttpHeaders({ 'content-type': 'application/json' })
@@ -24,8 +24,8 @@ export class VideoService {
 
   getVideos(): Observable<any> {
     console.log('Getting Videos');
-    //return this.httpClient.get<any[]>(this.videoApiUrl).pipe(tap(_ => console.log('Video API GET Method Called.')))
-    return of(videoData);
+    return this.httpClient.get<any[]>(this.videoApiUrl).pipe(tap(_ => console.log('Video API GET Method Called.')))
+    //return of(videoData);
     
   }
 }

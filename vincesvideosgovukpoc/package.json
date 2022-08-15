@@ -1,0 +1,17 @@
+{
+  "name": "vincesvidesgovukpoc",
+  "version": "1.0.0",
+  "description": "POC for Gov UK front end for Vinces Videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch sass:css"
+  },
+  "author": "Cris Wilson",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "govuk-frontend": "^4.3.0"
+  }
+}
